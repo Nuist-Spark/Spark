@@ -51,7 +51,7 @@ export default {
           cancelButtonText: '取消'
         }).then((logan) => {
           this
-            .$http.post('http://192.168.5.169:8000/api/group/apply', {
+            .$http.post('http://172.20.10.6:8000/api/group/apply', {
               create_user_id: this.user.id,
               name: value,
               logan: logan.value,

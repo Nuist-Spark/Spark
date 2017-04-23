@@ -44,7 +44,7 @@ export default {
   methods: {
     commit() {
       this
-        .$http.post('http://192.168.5.169:8000/api/login/reg/active', {
+        .$http.post('http://172.20.10.6:8000/api/login/reg/active', {
           name: this.input1,
           email: this.input2
         })
@@ -62,7 +62,7 @@ export default {
     },
     check() {
       this
-        .$http.post('http://192.168.5.169:8000/api/login/reg/nick', {
+        .$http.post('http://172.20.10.6:8000/api/login/reg/nick', {
           name: this.input1,
           email: this.input2
         })

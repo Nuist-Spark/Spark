@@ -55,7 +55,7 @@ export default {
   methods: {
     commit() {
       this
-        .$http.post('http://192.168.5.169:8000/api/login/reg/change', {
+        .$http.post('http://172.20.10.6:8000/api/login/reg/change', {
           id: loadFromLocal('user', 'data').id,
           password: this.input2,
           logan: this.input1,

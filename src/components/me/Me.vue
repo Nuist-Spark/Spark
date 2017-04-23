@@ -11,9 +11,9 @@
           <div class="count-wrapper">
             <ul>
               <li>{{user.name}}</li>
-              <li>总计走了{{ Number(user.step).toFixed(2) }}步</li>
-              <li>大约{{ Number(user.step * 0.4).toFixed(2) }}米</li>
-              <li>消耗了{{ Number(user.step * 0.4 * 150 / 4920).toFixed(2) }}卡路里</li>
+              <li>总计走了{{ Number(steps).toFixed(2) }}步</li>
+              <li>大约{{ Number(steps * 0.4).toFixed(2) }}米</li>
+              <li>消耗了{{ Number(steps * 0.4 * 150 / 4920).toFixed(2) }}卡路里</li>
               <li>积攒了{{ Number(user.score).toFixed(2) }}积分</li>
             </ul>
           </div>
@@ -72,6 +72,9 @@ export default {
   computed: {
     logoSource() {
       return '../../../static/img/logo.png'
+    },
+    steps() {
+      return this.user.step + Number(loadFromLocal('user', 'local', 0).step)
     }
   },
   methods: {
@@ -80,7 +83,7 @@ export default {
     },
     quit() {
       this
-        .$http.post('http://192.168.5.169:8000/api/step', {
+        .$http.post('http://172.20.10.6:8000/api/step', {
           id: loadFromLocal('user', 'data').id,
           step: loadFromLocal('user', 'local').step
         })
@@ -100,7 +103,7 @@ export default {
       }
     },
     getAvatar(index) {
-      return `http://192.168.5.169:8000${index}`
+      return `http://172.20.10.6:8000${index}`
     }
   },
   created() {

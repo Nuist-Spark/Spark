@@ -44,7 +44,7 @@ export default {
   methods: {
     login() {
       this
-        .$http.post('http://192.168.5.169:8000/api/login', {
+        .$http.post('http://172.20.10.6:8000/api/login', {
           name: this.input1,
           password: this.input2
         })

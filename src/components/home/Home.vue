@@ -57,7 +57,7 @@ export default {
 
     return {
       local: {
-        step: 0
+        step: 140
       },
       localTap: {},
       timer: 6000,
@@ -98,7 +98,7 @@ export default {
     },
     card() {
       this
-        .$http.post('http://192.168.5.169:8000/api/task/complete', {
+        .$http.post('http://172.20.10.6:8000/api/task/complete', {
           id: this.user.id
         })
         .then(({
@@ -124,7 +124,7 @@ export default {
   },
   created() {
     this
-      .$http.post('http://192.168.5.169:8000/api/task', {
+      .$http.post('http://172.20.10.6:8000/api/task', {
         id: loadFromLocal('user', 'data').id
       })
       .then(({

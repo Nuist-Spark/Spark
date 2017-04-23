@@ -74,7 +74,7 @@ export default {
 
     if (this.start === true) {
       this
-        .$http.get('http://192.168.5.169:8000/api/fight/init')
+        .$http.get('http://172.20.10.6:8000/api/fight/init')
         .then(({
           data
         }) => {
@@ -85,7 +85,7 @@ export default {
     }
 
     this
-      .$http.get('http://192.168.5.169:8000/api/group/list')
+      .$http.get('http://172.20.10.6:8000/api/group/list')
       .then(({
         data
       }) => {
@@ -98,7 +98,7 @@ export default {
       })
     this.middle = setInterval(() => {
       this
-        .$http.get('http://192.168.5.169:8000/api/fight/middle')
+        .$http.get('http://172.20.10.6:8000/api/fight/middle')
         .then(({
           data
         }) => {
@@ -112,7 +112,7 @@ export default {
       if (this.middle) {
         clearInterval(this.middle)
         this
-          .$http.get('http://192.168.5.169:8000/api/fight/final')
+          .$http.get('http://172.20.10.6:8000/api/fight/final')
           .then(({
             data
           }) => {
@@ -162,6 +162,7 @@ export default {
     overflow: hidden;
     .list {
       min-height: calc( 100vh - 180px);
+      padding-bottom: 6em;
       .el-collapse-item__header {
         text-align: left;
       }

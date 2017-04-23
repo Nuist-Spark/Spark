@@ -69,6 +69,13 @@ export default {
   computed: {
     joinable() {
       return loadFromLocal('user', 'data').group_id === 0
+    },
+    members() {
+      let a = ''
+      for (let item of this.group.users) {
+        a = a + item.name + '\n'
+      }
+      return a
     }
   },
   methods: {
@@ -80,23 +87,28 @@ export default {
     },
     join(id) {
       this
-        .$http.post('http://192.168.5.169:8000/api/group/join', {
+        .$http.post('http://172.20.10.6:8000/api/group/join', {
           group_id: id,
           id: loadFromLocal('user', 'data').id
         })
         .then(({
           data
         }) => {
+          console.log(data)
           if (data.status === 200) {
             this
-              .$http.post('http://192.168.5.169:8000/api/group/detail', {
+              .$http.post('http://172.20.10.6:8000/api/group/detail', {
                 id: loadFromLocal('user', 'data').id
               })
               .then(({
                 data
               }) => {
+                console.log(data)
                 if (data.status === 200) {
                   this.group = data.data
+                  saveToLocal('user', 'data', Object.assign({}, loadFromLocal('user', 'data'), {
+                    group_id: this.group.id
+                  }))
                   this.$message.success('加入成功！')
                 } else {
                   this.$message('你没有加入公会！')
@@ -109,13 +121,13 @@ export default {
         })
     },
     groupDetail() {
-      this.$alert(`公会成员`, '公会详情', {
+      this.$alert(`公会成员:${this.members}`, '公会详情', {
         confirmButtonText: '确定'
       })
     },
     quit() {
       this
-        .$http.post('http://192.168.5.169:8000/api/group/exit', {
+        .$http.post('http://172.20.10.6:8000/api/group/exit', {
           id: loadFromLocal('user', 'data').id
         })
         .then(({
@@ -123,7 +135,7 @@ export default {
         }) => {
           if (data.status === 200) {
             this
-              .$http.post('http://192.168.5.169:8000/api/group/detail', {
+              .$http.post('http://172.20.10.6:8000/api/group/detail', {
                 id: loadFromLocal('user', 'data').id
               })
               .then(({
@@ -154,7 +166,7 @@ export default {
   },
   created() {
     this
-      .$http.get('http://192.168.5.169:8000/api/group/list')
+      .$http.get('http://172.20.10.6:8000/api/group/list')
       .then(({
         data
       }) => {
@@ -164,7 +176,7 @@ export default {
       })
 
     this
-      .$http.post('http://192.168.5.169:8000/api/group/detail', {
+      .$http.post('http://172.20.10.6:8000/api/group/detail', {
         id: loadFromLocal('user', 'data').id
       })
       .then(({
@@ -250,6 +262,7 @@ export default {
     overflow: hidden;
     .list {
       min-height: calc( 100vh - 230px);
+      padding-bottom: 4em;
       .el-collapse-item__header {
         text-align: left;
       }
