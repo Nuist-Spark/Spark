@@ -1,8 +1,12 @@
 {
-  "name": "Solo",
+  "name": "Spark",
   "version": "1.0.0",
-  "description": "Start make a personal client.",
-  "author": "kingcc <laikinfox@gmail.com>",
+  "description": "A amazing sports app for coders.",
+  "author": [
+    "kingcc <laikinfox@gmail.com>",
+    "vampirebitter",
+    "jxw950605"
+  ],
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
@@ -16,6 +20,7 @@
     "better-scroll": "^0.1.15",
     "element-ui": "^1.2.8",
     "vue": "^2.2.2",
+    "vue-amap": "^0.2.3",
     "vue-router": "^2.2.0",
     "vuex": "^2.2.1"
   },

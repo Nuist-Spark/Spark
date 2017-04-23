@@ -1,7 +1,7 @@
 <template>
-  <div class="navbar">
+  <div class="navbar" v-show="navDisplay">
     <el-tabs @tab-click="routerPush">
-      <el-tab-pane :label="tabs[index].name" v-for="(value,index) in tabs"></el-tab-pane>
+      <el-tab-pane :label="tabs[index].name" v-for="(value,index) in tabs" :key="index"></el-tab-pane>
     </el-tabs>
   </div>
 </template>
@@ -12,19 +12,20 @@ export default {
       type: Array,
       default () {
         return [{
-          name: '主页',
-          router: '/'
+          name: '运动',
+          router: '/home'
         }, {
-          name: '博客',
-          router: '/blog'
+          name: '小组',
+          router: '/group'
         }, {
-          name: '新闻',
-          router: '/news'
-        }, {
-          name: '其他',
-          router: '/more'
+          name: '我',
+          router: '/me'
         }]
       }
+    },
+    navDisplay: {
+      type: Boolean,
+      default: false
     }
   },
   components: {
@@ -55,12 +56,14 @@ export default {
   position: fixed;
   bottom: 0;
   width: 100%;
+  line-height: 3em;
   .el-tabs__header {
     margin: 0;
     .el-tabs__nav {
       float: none;
       .el-tabs__item {
-        width: 25%;
+        width: 33%;
+        font-size: 1.1em;
       }
     }
   }

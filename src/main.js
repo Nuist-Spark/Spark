@@ -6,12 +6,19 @@ import router from './router'
 import store from './store'
 import ElementUI from 'element-ui'
 import axios from 'axios'
+import AMap from 'vue-amap'
 
 import 'element-ui/lib/theme-default/index.css'
 
 // init
 Vue.prototype.$http = axios
 Vue.use(ElementUI)
+Vue.use(AMap)
+
+AMap.initAMapApiLoader({
+  key: '437fc82ed1a44ac43462412b06a5f7da',
+  plugin: ['AMap.Autocomplete', 'AMap.PlaceSearch', 'AMap.Scale', 'AMap.OverView', 'AMap.ToolBar', 'AMap.MapType', 'AMap.PolyEditor', 'AMap.CircleEditor', 'Geolocation']
+})
 
 Vue.config.productionTip = false
 

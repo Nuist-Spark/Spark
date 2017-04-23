@@ -1,24 +1,38 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import Main from '@/components/main/Main'
 import Home from '@/components/home/Home'
-import Blog from '@/components/blog/Blog'
-import News from '@/components/news/News'
-import More from '@/components/more/More'
+import Group from '@/components/group/Group'
+import groupList from '@/components/group-list/groupList'
+import groupFight from '@/components/group-fight/groupFight'
+import Me from '@/components/me/Me'
+import Login from '@/components/login/Login'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [{
     path: '/',
-    component: Home
+    component: Main,
+    children: [{
+      path: '/home',
+      component: Home
+    }, {
+      path: '/group',
+      component: Group,
+      children: [{
+        path: '/group/groupList',
+        component: groupList
+      }, {
+        path: '/group/groupFight',
+        component: groupFight
+      }]
+    }, {
+      path: '/me',
+      component: Me
+    }]
   }, {
-    path: '/blog',
-    component: Blog
-  }, {
-    path: '/news',
-    component: News
-  }, {
-    path: '/more',
-    component: More
+    path: '/login',
+    component: Login
   }]
 })
