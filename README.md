@@ -21,14 +21,14 @@ The test demo is in `./demo` dir .
 
 ![logo](./demo/spark.png)
 
-## Techs
+## Kit
 
 Front-end:
 
 -	HTML WebApp
--	VueJS@2.2
--	ElementUI
--	Geolocation
+ -VueJS@2.2
+ -ElementUI
+ -Geolocation
 
 Back-end:
 
@@ -39,5 +39,5 @@ Back-end:
 Team:
 
 -	Git
--	Tower
--	
+ -Tower
+ -
