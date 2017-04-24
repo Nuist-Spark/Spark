@@ -2,6 +2,8 @@
 Spark
 ===
 
+![test](https://img.shields.io/teamcity/codebetter/bt428.svg)
+
 <img src="./static/img/logo.png" alt="" width="500">
 
 A amazing sports app for coders who love network rather than sports.
@@ -26,18 +28,21 @@ The test demo is in `./demo` dir .
 Front-end:
 
 -	HTML WebApp
- -VueJS@2.2
- -ElementUI
- -Geolocation
+- VueJS@2.2
+- ElementUI
+- Geolocation
 
 Back-end:
 
 -	PHP
-   -Laravel
-    -MySQL
+- Laravel
+- MySQL
 
 Team:
 
 -	Git
- -Tower
- -
+-	Tower
+
+## Licence
+
+MIT
