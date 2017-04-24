@@ -1,6 +1,8 @@
-# Spark
 
-![logo](./static/img/logo.png)
+Spark
+===
+
+<img src="./static/img/logo.png" alt="" width="500">
 
 A amazing sports app for coders who love network rather than sports.
 
@@ -14,24 +16,28 @@ The test demo is in `./demo` dir .
 
 ## Target
 
+- Team sports -> groups (default team-fight over the weekend)
+- Every sports logs have been saved in daily card.
+
 ![logo](./demo/spark.png)
 
 ## Techs
 
-Front-end: 
+Front-end:
 
--	HTML WebApp 
- - VueJS@2.2
- - ElementUI
- - Geolocation
+-	HTML WebApp
+-	VueJS@2.2
+-	ElementUI
+-	Geolocation
 
-Back-end:   
+Back-end:
 
--	PHP 
- -Laravel
- -MySQL
+-	PHP
+   -Laravel
+    -MySQL
 
 Team:
 
 -	Git
 -	Tower
+-	
