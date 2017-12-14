@@ -14,6 +14,10 @@ So this App also has many bugs because of its constucted in 2 days.
 
 The test demo is in `./demo` dir .
 
+-- 2017/12/14 --
+
+- Kingcc will refactor the application in 3 months.
+
 ---
 
 ## Target
@@ -23,7 +27,7 @@ The test demo is in `./demo` dir .
 
 ![logo](./demo/spark.png)
 
-## Kit
+## Technology Stack
 
 Front-end:
 
