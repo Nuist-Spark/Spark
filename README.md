@@ -6,24 +6,24 @@ Spark
 
 <img src="./static/img/logo.png" alt="" width="500">
 
-A amazing sports app for coders who love network rather than sports.
+This is an app to get engineers off the computer screen.
 
-This is a project which had join NUIST hack-fire game and get silver-medal-winner finally .
+This project participated in the NUIST hack-fire competition and finally won the silver medal.
 
-So this App also has many bugs because of its constucted in 2 days.
+So it's just an experiment because it only took 48 hours to develop.
 
-The test demo is in `./demo` dir .
+Video demo is in folder `./demo`.
 
 -- 2017/12/14 --
 
-- Kingcc will refactor the application in 3 months.
+- Kingcc will refactor this application in 3 months.
 
 ---
 
 ## Target
 
-- Team sports -> groups (default team-fight over the weekend)
-- Every sports logs have been saved in daily card.
+- Team sports -> groups - Use team cohesion to promote individual participation in sports(The default "Teams compete" frequency is once a week)
+- All sports records are kept on the daily card
 
 ![logo](./demo/spark.png)
 
