@@ -6,7 +6,7 @@ Spark
 
 <img src="./static/img/logo.png" alt="" width="500">
 
-This is an app to get engineers off the computer screen.
+It's an app designed to keep engineers away from computer screens.
 
 This project participated in the NUIST hack-fire competition and finally won the silver medal.
 
